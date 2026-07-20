@@ -25,4 +25,9 @@ public:
         delete[] str;
     }
     // copy constructor (deep copy)
+    myString(const myString& other){
+        this->len = other->len;
+        this->str = new char[len + 1];
+        std::strcpy(this->str, other->str);
+    }
 }
