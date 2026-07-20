@@ -25,9 +25,11 @@ public:
         delete[] str;
     }
     // copy constructor (deep copy)
+    // necessary to pass by reference (&)
+    // if we don't pass by reference, program must make a copy of that object, calling the copy constructor again and again, infinite recursion
     myString(const myString& other){
-        this->len = other->len;
-        this->str = new char[len + 1];
-        std::strcpy(this->str, other->str);
+        len = other.len;
+        str = new char[len + 1];
+        std::strcpy(str, other.str);
     }
 }
