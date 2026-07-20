@@ -59,6 +59,7 @@ public:
         // copy assignment operator of nullptr
         if(other.str == nullptr){
             len = 0;
+            delete[] str;
             str = nullptr;
             return *this;
         }
@@ -110,7 +111,7 @@ public:
     }
 
     // print operator
-    void print(){
+    void print() const {
         if(str){
             std::cout << str << std::endl;
         }else{
