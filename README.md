@@ -1,0 +1,1 @@
+manual implementation of C++ string library, without the use of std::string
