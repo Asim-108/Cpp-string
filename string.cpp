@@ -32,4 +32,20 @@ public:
         str = new char[len + 1];
         std::strcpy(str, other.str);
     }
+    // copy assignment operator
+    myString& operator=(const myString& other){
+        // self assignment protection
+        if (this = &other){
+            return *this;
+        }
+        // undefined delete protection
+        if (str != nullptr){
+            delete[] str;
+        }
+        len = other.len;
+        str = new char[len + 1];
+        std::strcpy(str, other.str);
+
+        return *this;
+    }
 }
